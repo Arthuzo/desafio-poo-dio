@@ -2,7 +2,6 @@ import br.com.dio.desafio.dominio.Bootcamp;
 import br.com.dio.desafio.dominio.Curso;
 import br.com.dio.desafio.dominio.Dev;
 import br.com.dio.desafio.dominio.Mentoria;
-
 import java.time.LocalDate;
 
 public class Main {
@@ -33,6 +32,20 @@ public class Main {
         bootcamp.getConteudos().add(curso2);
         bootcamp.getConteudos().add(mentoria);
 
+        Dev devAndre = new Dev();
+        devAndre.setNome("Andre");
+        devAndre.inscreverBootcamp(bootcamp);
+        System.out.println("Conteúdos Inscritos Andre: " + devAndre.getConteudosInscritos());
+        devAndre.progredir();
+        devAndre.progredir();
+        System.out.println("-");
+        System.out.println("Conteúdos Inscritos Andre: " + devAndre.getConteudosInscritos());
+        System.out.println("Conteúdos Concluídos Andre: " + devAndre.getConteudosConcluidos());
+        System.out.println("XP: " + devAndre.calcularTotalXp());
+        
+        System.out.println("-------");
+
+
         Dev devCamila = new Dev();
         devCamila.setNome("Camila");
         devCamila.inscreverBootcamp(bootcamp);
@@ -57,6 +70,16 @@ public class Main {
         System.out.println("Conteúdos Inscritos João:" + devJoao.getConteudosInscritos());
         System.out.println("Conteúdos Concluidos João:" + devJoao.getConteudosConcluidos());
         System.out.println("XP:" + devJoao.calcularTotalXp());
+
+        System.out.println("-------");
+
+        System.out.println("------- Resumo Final dos Devs -------");
+        System.out.println(devAndre.getNome() + " -> XP Total: " + devAndre.calcularTotalXp());
+        System.out.println("------------------------------------");
+        System.out.println(devCamila.getNome() + " -> XP Total: " + devCamila.calcularTotalXp());
+        System.out.println("------------------------------------");
+        System.out.println(devJoao.getNome() + " -> XP Total: " + devJoao.calcularTotalXp());
+        System.out.println("------------------------------------");
 
     }
 
